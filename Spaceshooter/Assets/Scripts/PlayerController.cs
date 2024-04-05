@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
-    float velocidade = 5;
-    Rigidbody2D meuRB;
+    private float velocidade = 5f;
+    private Rigidbody2D meuRB;
+    [SerializeField] private TiroPlayerController meuTiro;
     void Start()
     {
         meuRB = GetComponent<Rigidbody2D>();
@@ -18,5 +19,10 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         meuRB.velocity = new Vector2(horizontal, vertical).normalized * velocidade;
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(meuTiro, transform.position, Quaternion.identity);
+        }
     }
 }
