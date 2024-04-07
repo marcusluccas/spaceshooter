@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4639618565922934718}
   - component: {fileID: 3362039164142677397}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tiro_player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 306262790888157229}
   - component: {fileID: 433310285162373728}
   - component: {fileID: -1591686189697613733}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tiro Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28810053cf1f43c468cbdc9083d611d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eu: {fileID: 1121055608759491110}
+  velocidade: 10
 --- !u!50 &306262790888157229
 Rigidbody2D:
   serializedVersion: 4

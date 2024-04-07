@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private float velocidade = 5f;
     private Rigidbody2D meuRB;
     [SerializeField] private TiroPlayerController meuTiro;
+    [SerializeField] private Transform posicaoTiro;
     void Start()
     {
         meuRB = GetComponent<Rigidbody2D>();
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(meuTiro, transform.position, Quaternion.identity);
+            Instantiate(meuTiro, posicaoTiro.position, Quaternion.identity);
         }
     }
 }
