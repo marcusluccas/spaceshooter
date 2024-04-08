@@ -9,6 +9,9 @@ public class Inimigo01Controller : MonoBehaviour
     [SerializeField] private GameObject meuTiro;
     private float esperaTiro = 1f;
     [SerializeField] private Transform posicaoTiro;
+    [SerializeField] private GameObject minhaExplocao;
+
+    private int vida = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +25,23 @@ public class Inimigo01Controller : MonoBehaviour
     void Update()
     {
         bool visivel = GetComponentInChildren<SpriteRenderer>().isVisible;
-        Debug.Log(visivel);
 
         esperaTiro -= Time.deltaTime;
         if (esperaTiro < 0 && visivel)
         {
             Instantiate(meuTiro, posicaoTiro.position, Quaternion.identity);
             esperaTiro = Random.Range(1f, 1.5f);
+        }
+    }
+
+    //Criando um metodo de receber dano que recebe a quantidade de dano
+    public void RecebeDano(int dano = 1)
+    {
+        vida -= dano;
+        if (vida <= 0)
+        {
+            Instantiate(minhaExplocao, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }

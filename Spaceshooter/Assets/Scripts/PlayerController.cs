@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D meuRB;
     [SerializeField] private TiroPlayerController meuTiro;
     [SerializeField] private Transform posicaoTiro;
+    [SerializeField] private GameObject minhaExplosao;
+    private int vida = 3;
     void Start()
     {
         meuRB = GetComponent<Rigidbody2D>();
@@ -24,6 +26,18 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Instantiate(meuTiro, posicaoTiro.position, Quaternion.identity);
+        }
+    }
+
+    //Criando um metodo de dar dano e recebe a quantidade de dano que vai ser dano
+    public void LevaDano(int dano = 1)
+    {
+        vida -= dano;
+        
+        if (vida < 0) 
+        {
+            Instantiate(minhaExplosao, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }

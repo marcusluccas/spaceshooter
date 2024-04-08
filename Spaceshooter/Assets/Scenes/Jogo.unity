@@ -289,14 +289,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inimigo
       objectReference: {fileID: 0}
-    - target: {fileID: 7666061498717877540, guid: 2232d45072932ff47882397bb4a993a4, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7666061498717877540, guid: 2232d45072932ff47882397bb4a993a4, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1542100119
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
