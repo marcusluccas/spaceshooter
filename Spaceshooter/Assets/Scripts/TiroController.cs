@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TiroPlayerController : MonoBehaviour
+public class TiroController : MonoBehaviour
 {
     private Rigidbody2D meuRB;
     [SerializeField] private float velocidade = 10f;
@@ -12,7 +12,7 @@ public class TiroPlayerController : MonoBehaviour
     void Start()
     {
         meuRB = GetComponent<Rigidbody2D>();
-        meuRB.velocity = Vector2.up * velocidade;
+        // meuRB.velocity = Vector2.up * velocidade;
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class TiroPlayerController : MonoBehaviour
     {
         if (collision.CompareTag("Inimigos"))
         {
-            collision.GetComponent<Inimigo01Controller>().RecebeDano();
+            collision.GetComponent<InimigoPai>().RecebeDano();
         }
         else if (collision.CompareTag("Player"))
         {

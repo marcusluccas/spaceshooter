@@ -7,10 +7,11 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private float velocidade = 5f;
     private Rigidbody2D meuRB;
-    [SerializeField] private TiroPlayerController meuTiro;
+    [SerializeField] private GameObject meuTiro;
     [SerializeField] private Transform posicaoTiro;
     [SerializeField] private GameObject minhaExplosao;
     private int vida = 3;
+    private float velocidadeTiro = 10f;
     void Start()
     {
         meuRB = GetComponent<Rigidbody2D>();
@@ -19,13 +20,24 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Movendo();
+
+        Atirando();
+    }
+
+    private void Movendo()
+    {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         meuRB.velocity = new Vector2(horizontal, vertical).normalized * velocidade;
+    }
 
+    private void Atirando()
+    {
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(meuTiro, posicaoTiro.position, Quaternion.identity);
+            GameObject tiro = Instantiate(meuTiro, posicaoTiro.position, Quaternion.identity);
+            tiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velocidadeTiro);
         }
     }
 

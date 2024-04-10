@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abefee4f08a90bb4e94afafebe52ec5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meuTiro: {fileID: 7981337969224753100, guid: 79af533440cc7ea4f9d70a1344345568, type: 3}
+  meuTiro: {fileID: 1121055608759491110, guid: 79af533440cc7ea4f9d70a1344345568, type: 3}
   posicaoTiro: {fileID: 7458000620541016185}
   minhaExplosao: {fileID: 6162538279553947388, guid: 063c09c7c0ff7334992ef1010542e451, type: 3}
 --- !u!50 &151233036685939826
