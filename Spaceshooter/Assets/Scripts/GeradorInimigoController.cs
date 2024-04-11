@@ -10,8 +10,10 @@ public class GeradorInimigoController : MonoBehaviour
     private int level = 1;
 
     private float esperaInimigo = 0f;
-    private float timerInimigo = 5f;
+    private float timerInimigo = 2f;
     private int nextLevel = 100;
+
+    private int qtdInimigo = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,17 +35,22 @@ public class GeradorInimigoController : MonoBehaviour
             level++;
         }
     }
+
+    public void DiminuiInimigo()
+    {
+        qtdInimigo--;
+    }
+
     private void GeraInimigos()
     {
-        if (esperaInimigo > 0f)
+        if (esperaInimigo > 0f && qtdInimigo <= 0)
         {
             esperaInimigo -= Time.deltaTime;
         }
 
-        if (esperaInimigo <= 0f)
+        if (esperaInimigo <= 0f && qtdInimigo <= 0)
         {
             int quantidade = level * 4;
-            int qtdInimigo = 0;
             while (qtdInimigo < quantidade)
             {
                 GameObject inimigoEscolhido;

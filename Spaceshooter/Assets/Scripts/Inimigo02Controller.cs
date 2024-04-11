@@ -12,9 +12,11 @@ public class Inimigo02Controller : InimigoPai
     // Start is called before the first frame update
     void Start()
     {
+        velocidade = 1f;
         meuRB = GetComponent<Rigidbody2D>();
         meuRB.velocity = new Vector2(0f, velocidade);
-        esperaTiro = Random.Range(0.5f, 1f);
+        esperaTiro = Random.Range(1f, 2f);
+        pontos = 25;
     }
 
     // Update is called once per frame
@@ -25,12 +27,10 @@ public class Inimigo02Controller : InimigoPai
         {
             if (transform.position.x < 0f)
             {
-                Debug.Log("Esquerda!!!");
                 meuRB.velocity = new Vector2(velocidade * -1, velocidade);
             }
             else
             {
-                Debug.Log("Direita!!!");
                 meuRB.velocity = new Vector2(velocidade, velocidade);
             }
         }
@@ -52,7 +52,7 @@ public class Inimigo02Controller : InimigoPai
                 tiro.GetComponent<Rigidbody2D>().velocity = direcao * velocidadeTiro;
                 float angulo = Mathf.Atan2(direcao.y, direcao.x) * Mathf.Rad2Deg;
                 tiro.transform.rotation = Quaternion.Euler(0f, 0f, 90f + angulo);
-                esperaTiro = Random.Range(2f, 3f);
+                esperaTiro = Random.Range(2.5f, 3f);
             }
         }
     }

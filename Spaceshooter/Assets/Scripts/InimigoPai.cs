@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class InimigoPai : MonoBehaviour
 {
-    protected float velocidade = -2f;
+    protected float velocidade;
     protected int vida = 1;
     [SerializeField] protected GameObject minhaExplosao;
     [SerializeField] protected GameObject meuTiro;
     protected float esperaTiro;
-    protected float velocidadeTiro = 5f;
+    protected float velocidadeTiro = 3f;
+    protected int pontos = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,9 @@ public class InimigoPai : MonoBehaviour
         if (transform.position.y < 5f)
         {
             vida -= dano;
-            FindObjectOfType<GeradorInimigoController>().GanhaPontos(10);
+            GeradorInimigoController gerador = FindObjectOfType<GeradorInimigoController>();
+            gerador.GanhaPontos(pontos);
+            gerador.DiminuiInimigo();
 
             if (vida <= 0)
             {
@@ -44,6 +47,8 @@ public class InimigoPai : MonoBehaviour
     {
         if (collision.CompareTag("Destruidor de Tiro"))
         {
+            GeradorInimigoController gerador = FindObjectOfType<GeradorInimigoController>();
+            gerador.DiminuiInimigo();
             Destroy(gameObject);
         }
     }
@@ -54,6 +59,8 @@ public class InimigoPai : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerController>().LevaDano();
             Instantiate(minhaExplosao, transform.position, Quaternion.identity);
+            GeradorInimigoController gerador = FindObjectOfType<GeradorInimigoController>();
+            gerador.DiminuiInimigo();
             Destroy(gameObject);
         }
     }

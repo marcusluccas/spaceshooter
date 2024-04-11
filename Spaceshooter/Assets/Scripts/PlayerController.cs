@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject minhaExplosao;
     private int vida = 3;
     private float velocidadeTiro = 10f;
+    private float limiteX = 8.25f;
+    private float limiteY = 4.25f;
+
     void Start()
     {
         meuRB = GetComponent<Rigidbody2D>();
@@ -30,6 +33,10 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         meuRB.velocity = new Vector2(horizontal, vertical).normalized * velocidade;
+        Vector3 posicao = transform.position;
+        posicao.x = Mathf.Clamp(posicao.x, -limiteX, limiteX);
+        posicao.y = Mathf.Clamp(posicao.y, -limiteY, limiteY);
+        transform.position = posicao;
     }
 
     private void Atirando()

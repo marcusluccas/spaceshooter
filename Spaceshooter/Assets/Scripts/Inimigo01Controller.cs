@@ -10,10 +10,11 @@ public class Inimigo01Controller : InimigoPai
     // Start is called before the first frame update
     void Start()
     {
+        velocidade = 1.5f;
         meuRB = GetComponent<Rigidbody2D>();
-        meuRB.velocity = new Vector2(0f, velocidade);
+        meuRB.velocity = new Vector2(0f, -velocidade);
         esperaTiro = Random.Range(0.5f, 1f);
-        velocidadeTiro = -6f;
+        velocidadeTiro = -4f;
     }
 
     // Update is called once per frame
@@ -33,7 +34,7 @@ public class Inimigo01Controller : InimigoPai
             {
                 GameObject tiro = Instantiate(meuTiro, posicaoTiro.position, Quaternion.identity);
                 tiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velocidadeTiro);
-                esperaTiro = Random.Range(1.5f, 2f);
+                esperaTiro = Random.Range(2f, 2.5f);
             }
         }
     }
