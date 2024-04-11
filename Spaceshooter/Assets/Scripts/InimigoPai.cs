@@ -26,12 +26,16 @@ public class InimigoPai : MonoBehaviour
     //Criando o metodo de levar dano e morrer
     public void RecebeDano(int dano = 1)
     {
-        vida -= dano;
-
-        if (vida <= 0)
+        if (transform.position.y < 5f)
         {
-            Instantiate(minhaExplosao, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            vida -= dano;
+            FindObjectOfType<GeradorInimigoController>().GanhaPontos(10);
+
+            if (vida <= 0)
+            {
+                Instantiate(minhaExplosao, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
         }
     }
 
