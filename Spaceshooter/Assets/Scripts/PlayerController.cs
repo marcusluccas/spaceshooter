@@ -33,10 +33,9 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         meuRB.velocity = new Vector2(horizontal, vertical).normalized * velocidade;
-        Vector3 posicao = transform.position;
-        posicao.x = Mathf.Clamp(posicao.x, -limiteX, limiteX);
-        posicao.y = Mathf.Clamp(posicao.y, -limiteY, limiteY);
-        transform.position = posicao;
+        float meuX = Mathf.Clamp(transform.position.x, -limiteX, limiteX);
+        float meuY = Mathf.Clamp(transform.position.y, -limiteY, limiteY);
+        transform.position = new Vector3(meuX, meuY, transform.position.z);
     }
 
     private void Atirando()
