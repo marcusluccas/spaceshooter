@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private float velocidadeTiro = 10f;
     private float limiteX = 8.25f;
     private float limiteY = 4.25f;
+    private int levelTiro = 1;
 
     void Start()
     {
