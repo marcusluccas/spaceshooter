@@ -16,7 +16,9 @@ public class PlayerController : MonoBehaviour
     private float velocidadeTiro = 10f;
     private float limiteX = 8.25f;
     private float limiteY = 4.25f;
-    private int levelTiro = 2;
+    private int levelTiro = 3;
+    private Vector3 posicaoTiroLeft;
+    private Vector3 posicaoTiroRight;
 
     void Start()
     {
@@ -52,10 +54,18 @@ public class PlayerController : MonoBehaviour
                     break;
 
                 case 2: 
-                    Vector3 posicaoTiroLeft = new Vector3(transform.position.x - 0.45f, transform.position.y + 0.15f, transform.position.z);
+                    posicaoTiroLeft = new Vector3(transform.position.x - 0.45f, transform.position.y + 0.15f, transform.position.z);
                     CriaTiro(meuSegundoTiro, posicaoTiroLeft);
-                    Vector3 posicaoTiroRight = new Vector3(transform.position.x + 0.45f, transform.position.y + 0.15f, transform.position.z);
+                    posicaoTiroRight = new Vector3(transform.position.x + 0.45f, transform.position.y + 0.15f, transform.position.z);
                     CriaTiro(meuSegundoTiro, posicaoTiroRight);                    
+                    break;
+
+                case 3:
+                    CriaTiro(meuTiro, posicaoTiro.position);
+                    posicaoTiroLeft = new Vector3(transform.position.x - 0.45f, transform.position.y + 0.15f, transform.position.z);
+                    CriaTiro(meuSegundoTiro, posicaoTiroLeft);
+                    posicaoTiroRight = new Vector3(transform.position.x + 0.45f, transform.position.y + 0.15f, transform.position.z);
+                    CriaTiro(meuSegundoTiro, posicaoTiroRight);
                     break;
             }
         }
