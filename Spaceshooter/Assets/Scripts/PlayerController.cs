@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,13 +9,14 @@ public class PlayerController : MonoBehaviour
     private float velocidade = 5f;
     private Rigidbody2D meuRB;
     [SerializeField] private GameObject meuTiro;
+    [SerializeField] private GameObject meuSegundoTiro;
     [SerializeField] private Transform posicaoTiro;
     [SerializeField] private GameObject minhaExplosao;
     private int vida = 3;
     private float velocidadeTiro = 10f;
     private float limiteX = 8.25f;
     private float limiteY = 4.25f;
-    private int levelTiro = 1;
+    private int levelTiro = 2;
 
     void Start()
     {
@@ -43,9 +45,26 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject tiro = Instantiate(meuTiro, posicaoTiro.position, Quaternion.identity);
-            tiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velocidadeTiro);
+            switch(levelTiro)
+            {
+                case 1:
+                    CriaTiro(meuTiro, posicaoTiro.position);
+                    break;
+
+                case 2: 
+                    Vector3 posicaoTiroLeft = new Vector3(transform.position.x - 0.45f, transform.position.y + 0.15f, transform.position.z);
+                    CriaTiro(meuSegundoTiro, posicaoTiroLeft);
+                    Vector3 posicaoTiroRight = new Vector3(transform.position.x + 0.45f, transform.position.y + 0.15f, transform.position.z);
+                    CriaTiro(meuSegundoTiro, posicaoTiroRight);                    
+                    break;
+            }
         }
+    }
+
+    private void CriaTiro(GameObject tiro, Vector3 posicaoTiro)
+    {
+        GameObject tiroCriando = Instantiate(tiro, posicaoTiro, Quaternion.identity);
+        tiroCriando.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velocidadeTiro);
     }
 
     //Criando um metodo de dar dano e recebe a quantidade de dano que vai ser dano
