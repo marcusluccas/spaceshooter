@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Inimigos
   - Destruidor de Tiro
+  - Power Up
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Player
   - Tiro Player
   - Tiro Inimigo
-  - 
+  - PowerUp
   - 
   - 
   - 
@@ -42,6 +43,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Power Ups
+    uniqueID: 2142970957
     locked: 0
   - name: Tiro
     uniqueID: 1913068479

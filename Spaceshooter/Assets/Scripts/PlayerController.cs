@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private float velocidadeTiro = 10f;
     private float limiteX = 8.25f;
     private float limiteY = 4.25f;
-    private int levelTiro = 3;
+    private int levelTiro = 1;
     private Vector3 posicaoTiroLeft;
     private Vector3 posicaoTiroRight;
 
@@ -86,6 +86,18 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(minhaExplosao, transform.position, Quaternion.identity);
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Power Up"))
+        {
+            if (levelTiro < 3)
+            {
+                levelTiro++;
+            }
+            Destroy(collision.gameObject);
         }
     }
 }
