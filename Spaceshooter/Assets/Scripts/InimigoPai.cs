@@ -77,6 +77,9 @@ public class InimigoPai : MonoBehaviour
     private void OnDestroy()
     {
         GeradorInimigoController gerador = FindObjectOfType<GeradorInimigoController>();
-        gerador.DiminuiInimigo();
+        if (gerador)
+        {
+            gerador.DiminuiInimigo();
+        }
     }
 }
