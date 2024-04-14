@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minhaExplosao: {fileID: 6162538279553947388, guid: 063c09c7c0ff7334992ef1010542e451, type: 3}
   meuTiro: {fileID: 5425161006542645420, guid: a8186cdd8a2cda84aa206544b504a6f1, type: 3}
+  powerUp: {fileID: 2137412995410758447, guid: 172a7d39049eb8e47bc5e35cf2105c74, type: 3}
   posicaoTiro: {fileID: 194692331362159101}
 --- !u!1 &8059504516626548775
 GameObject:
@@ -185,7 +186,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1542100119
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 2051821713, guid: a30caeb6c4379994c9255d3796997b9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

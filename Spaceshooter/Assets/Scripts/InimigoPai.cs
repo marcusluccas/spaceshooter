@@ -11,6 +11,7 @@ public class InimigoPai : MonoBehaviour
     protected float esperaTiro;
     protected float velocidadeTiro = 3f;
     protected int pontos = 10;
+    [SerializeField] protected GameObject powerUp;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +63,18 @@ public class InimigoPai : MonoBehaviour
             GeradorInimigoController gerador = FindObjectOfType<GeradorInimigoController>();
             gerador.DiminuiInimigo();
             Destroy(gameObject);
+        }
+    }
+
+    public void DropaItem()
+    {
+        float chance = Random.Range(0f, 1f);
+        if (chance > 0.9f)
+        {
+            GameObject powerUpCriado = Instantiate(powerUp, transform.position, Quaternion.identity);
+            Vector2 direcao = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
+            powerUpCriado.GetComponent<Rigidbody2D>().velocity = direcao;
+            Destroy(powerUpCriado, 3f);
         }
     }
 }
