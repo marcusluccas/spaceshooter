@@ -14,7 +14,7 @@ public class Inimigo02Controller : InimigoPai
     {
         velocidade = 1f;
         meuRB = GetComponent<Rigidbody2D>();
-        meuRB.velocity = new Vector2(0f, velocidade);
+        meuRB.velocity = new Vector2(0f, -velocidade);
         esperaTiro = Random.Range(1f, 2f);
         pontos = 25;
         chance = 0.8f;
@@ -28,11 +28,11 @@ public class Inimigo02Controller : InimigoPai
         {
             if (transform.position.x < 0f)
             {
-                meuRB.velocity = new Vector2(velocidade * -1, velocidade);
+                meuRB.velocity = new Vector2(velocidade, -velocidade);
             }
             else
             {
-                meuRB.velocity = new Vector2(velocidade, velocidade);
+                meuRB.velocity = new Vector2(velocidade * -1, -velocidade);
             }
         }
     }

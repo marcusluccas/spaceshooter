@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Principal;
 using UnityEngine;
 
 public class GeradorInimigoController : MonoBehaviour
@@ -7,7 +8,7 @@ public class GeradorInimigoController : MonoBehaviour
     [SerializeField] private GameObject[] inimigos;
 
     private int pontos = 0;
-    private int level = 1;
+    private int level = 10000;
 
     private float esperaInimigo = 0f;
     private float timerInimigo = 2f;
@@ -40,6 +41,18 @@ public class GeradorInimigoController : MonoBehaviour
     {
         qtdInimigo--;
     }
+    private bool ChecaPosicaoLivre(Vector3 posicao, Vector2 size)
+    {
+        Collider2D livre = Physics2D.OverlapBox(posicao, size, 0f);
+        if (livre == null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     private void GeraInimigos()
     {
@@ -51,8 +64,16 @@ public class GeradorInimigoController : MonoBehaviour
         if (esperaInimigo <= 0f && qtdInimigo <= 0)
         {
             int quantidade = level * 4;
+            int tentativas = 0;
             while (qtdInimigo < quantidade)
             {
+                tentativas++;
+
+                if (tentativas > 200)
+                {
+                    break;
+                }
+
                 GameObject inimigoEscolhido;
 
                 float chance = Random.Range(0f, level);
@@ -65,7 +86,11 @@ public class GeradorInimigoController : MonoBehaviour
                     inimigoEscolhido = inimigos[0];
                 }
 
-                Instantiate(inimigoEscolhido, new Vector3(Random.Range(-8f, 8f), Random.Range(6f, 12f), 0), Quaternion.identity);
+                Vector3 posicao = new Vector3(Random.Range(-8f, 8f), Random.Range(6f, 12f), 0f);
+
+                if (!ChecaPosicaoLivre(posicao, inimigoEscolhido.transform.localScale)) continue;
+
+                Instantiate(inimigoEscolhido, posicao, Quaternion.identity);
                 qtdInimigo++;
                 esperaInimigo = timerInimigo;
             }

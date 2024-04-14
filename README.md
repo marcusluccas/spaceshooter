@@ -6,6 +6,14 @@
 ## Controles
 * Move WASD
 * Fire Space and Mouse Click Left
+## Como jogar
+* Atire nos inimigos para derrotalos
+* Os inimigos ao serem derrotados tem a chance de dropar o power up
+* O power up aumenta o level do tiro
+* Inimigo 1 anda para baixo e atira para baixo
+* Inimigo 2 anda para baixo no começo
+e quando chega no meio da tela anda para o lado oposto de onde ele esta
+e atira na direção do player
 ## Créditos
 * Ideia do curso de desenvolvimento de jogos da [Noneclass](https://noneclass.com.br)
 * Assets do [Dininho](https://www.youtube.com/@ErickDinobonoide)
