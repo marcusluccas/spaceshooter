@@ -32,12 +32,11 @@ public class InimigoPai : MonoBehaviour
         if (transform.position.y < 5f)
         {
             vida -= dano;
-            GeradorInimigoController gerador = FindObjectOfType<GeradorInimigoController>();
-            gerador.GanhaPontos(pontos);
-            gerador.DiminuiInimigo();
 
             if (vida <= 0)
             {
+                GeradorInimigoController gerador = FindObjectOfType<GeradorInimigoController>();
+                gerador.GanhaPontos(pontos);
                 Instantiate(minhaExplosao, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
@@ -49,8 +48,6 @@ public class InimigoPai : MonoBehaviour
     {
         if (collision.CompareTag("Destruidor de Tiro"))
         {
-            GeradorInimigoController gerador = FindObjectOfType<GeradorInimigoController>();
-            gerador.DiminuiInimigo();
             Destroy(gameObject);
         }
     }
@@ -61,8 +58,6 @@ public class InimigoPai : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerController>().LevaDano();
             Instantiate(minhaExplosao, transform.position, Quaternion.identity);
-            GeradorInimigoController gerador = FindObjectOfType<GeradorInimigoController>();
-            gerador.DiminuiInimigo();
             Destroy(gameObject);
         }
     }
@@ -77,5 +72,11 @@ public class InimigoPai : MonoBehaviour
             powerUpCriado.GetComponent<Rigidbody2D>().velocity = direcao;
             Destroy(powerUpCriado, 3f);
         }
+    }
+
+    private void OnDestroy()
+    {
+        GeradorInimigoController gerador = FindObjectOfType<GeradorInimigoController>();
+        gerador.DiminuiInimigo();
     }
 }
