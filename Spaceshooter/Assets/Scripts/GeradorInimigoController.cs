@@ -8,7 +8,7 @@ public class GeradorInimigoController : MonoBehaviour
     [SerializeField] private GameObject[] inimigos;
 
     private int pontos = 0;
-    private int level = 10000;
+    private int level = 1;
 
     private float esperaInimigo = 0f;
     private float timerInimigo = 2f;

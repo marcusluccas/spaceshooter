@@ -37,6 +37,7 @@ public class InimigoPai : MonoBehaviour
             {
                 GeradorInimigoController gerador = FindObjectOfType<GeradorInimigoController>();
                 gerador.GanhaPontos(pontos);
+                DropaItem();
                 Instantiate(minhaExplosao, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }

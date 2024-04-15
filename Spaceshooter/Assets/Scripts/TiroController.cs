@@ -26,7 +26,6 @@ public class TiroController : MonoBehaviour
         {
             InimigoPai inimigo = collision.GetComponent<InimigoPai>();
             inimigo.RecebeDano();
-            inimigo.DropaItem();
         }
         else if (collision.CompareTag("Player"))
         {
