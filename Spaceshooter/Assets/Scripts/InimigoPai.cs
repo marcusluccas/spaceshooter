@@ -49,6 +49,7 @@ public class InimigoPai : MonoBehaviour
     {
         if (collision.CompareTag("Destruidor de Tiro"))
         {
+            Instantiate(minhaExplosao, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
