@@ -4,8 +4,9 @@
 ## Descrição
 * Um jogo de navinha em que seu objetivo é derrotar o chefão final
 ## Controles
-* Move WASD
-* Fire Space and Mouse Click Left
+* Move | WASD
+* Fire | Space and Mouse Click Left
+* Allow | shield in "E"
 ## Como jogar
 * Atire nos inimigos para derrotalos
 * Os inimigos ao serem derrotados tem a chance de dropar o power up

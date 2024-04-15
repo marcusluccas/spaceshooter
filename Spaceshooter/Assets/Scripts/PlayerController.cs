@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
     private void AtivaEscudo()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Shield") && escudo == null)
         {
             escudo = Instantiate(meuEscudo, transform.position, transform.rotation);
         }
