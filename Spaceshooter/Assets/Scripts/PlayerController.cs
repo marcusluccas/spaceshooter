@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 posicaoTiroLeft;
     private Vector3 posicaoTiroRight;
     [SerializeField] private GameObject meuEscudo;
-
+    private GameObject escudo;
     void Start()
     {
         meuRB = GetComponent<Rigidbody2D>();
@@ -84,7 +84,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2"))
         {
-            Instantiate(meuEscudo, transform.position, transform.rotation);
+            escudo = Instantiate(meuEscudo, transform.position, transform.rotation);
+        }
+        if (escudo != null)
+        {
+            escudo.transform.position = transform.position;
         }
     }
 

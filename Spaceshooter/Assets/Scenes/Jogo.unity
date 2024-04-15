@@ -285,10 +285,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 3829365161827554046, guid: 5497c3f793ca0fe4fb9d1a6c49395776, type: 3}
-      propertyPath: m_Size.x
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 7418834541770122234, guid: 5497c3f793ca0fe4fb9d1a6c49395776, type: 3}
       propertyPath: m_Name
       value: Tiro Player Parede (2)
@@ -345,10 +341,6 @@ PrefabInstance:
     - target: {fileID: 3039876329624631868, guid: 5497c3f793ca0fe4fb9d1a6c49395776, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829365161827554046, guid: 5497c3f793ca0fe4fb9d1a6c49395776, type: 3}
-      propertyPath: m_Size.x
-      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7418834541770122234, guid: 5497c3f793ca0fe4fb9d1a6c49395776, type: 3}
       propertyPath: m_Name
@@ -582,10 +574,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8832880142649228751, guid: 0b7a3f18fb3ca5345a3515760b88a6fc, type: 3}
-      propertyPath: meuEscudo
-      value: 
-      objectReference: {fileID: 4007385016849330273, guid: bb0da9e0bbf832e40849e4f9ed9cbc4a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
