@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 posicaoTiroRight;
     [SerializeField] private GameObject meuEscudo;
     private GameObject escudo;
+    private float timerEscudo = 0f;
     void Start()
     {
         meuRB = GetComponent<Rigidbody2D>();
@@ -89,6 +90,14 @@ public class PlayerController : MonoBehaviour
         if (escudo != null)
         {
             escudo.transform.position = transform.position;
+
+            timerEscudo += Time.deltaTime;
+
+            if (timerEscudo > 5.2f)
+            {
+                Destroy(escudo);
+                timerEscudo = 0f;
+            }
         }
     }
 
