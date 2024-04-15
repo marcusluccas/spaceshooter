@@ -90,7 +90,7 @@ public class GeradorInimigoController : MonoBehaviour
 
                 if (!ChecaPosicaoLivre(posicao, inimigoEscolhido.transform.localScale)) continue;
 
-                Instantiate(inimigoEscolhido, posicao, Quaternion.identity);
+                Instantiate(inimigoEscolhido, posicao, transform.rotation);
                 qtdInimigo++;
                 esperaInimigo = timerInimigo;
             }

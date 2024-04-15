@@ -48,7 +48,7 @@ public class Inimigo02Controller : InimigoPai
             esperaTiro -= Time.deltaTime;
             if (esperaTiro < 0f)
             {
-                GameObject tiro = Instantiate(meuTiro, posicaoTiro.position, Quaternion.identity);
+                GameObject tiro = Instantiate(meuTiro, posicaoTiro.position, transform.rotation);
                 Vector3 direcao = player.transform.position - transform.position;
                 direcao.Normalize();
                 tiro.GetComponent<Rigidbody2D>().velocity = direcao * velocidadeTiro;

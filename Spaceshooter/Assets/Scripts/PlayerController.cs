@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private int levelTiro = 1;
     private Vector3 posicaoTiroLeft;
     private Vector3 posicaoTiroRight;
+    [SerializeField] private GameObject meuEscudo;
 
     void Start()
     {
@@ -31,6 +32,8 @@ public class PlayerController : MonoBehaviour
         Movendo();
 
         Atirando();
+
+        AtivaEscudo();
     }
 
     private void Movendo()
@@ -73,8 +76,16 @@ public class PlayerController : MonoBehaviour
 
     private void CriaTiro(GameObject tiro, Vector3 posicaoTiro)
     {
-        GameObject tiroCriando = Instantiate(tiro, posicaoTiro, Quaternion.identity);
+        GameObject tiroCriando = Instantiate(tiro, posicaoTiro, transform.rotation);
         tiroCriando.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velocidadeTiro);
+    }
+
+    private void AtivaEscudo()
+    {
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Instantiate(meuEscudo, transform.position, transform.rotation);
+        }
     }
 
     //Criando um metodo de dar dano e recebe a quantidade de dano que vai ser dano
@@ -84,7 +95,7 @@ public class PlayerController : MonoBehaviour
         
         if (vida < 0) 
         {
-            Instantiate(minhaExplosao, transform.position, Quaternion.identity);
+            Instantiate(minhaExplosao, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

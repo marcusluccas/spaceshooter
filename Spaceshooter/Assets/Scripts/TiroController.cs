@@ -32,7 +32,7 @@ public class TiroController : MonoBehaviour
             collision.GetComponent<PlayerController>().LevaDano();
         }
 
-        Instantiate(minhaExplosao, transform.position, Quaternion.identity);
+        Instantiate(minhaExplosao, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

@@ -34,7 +34,7 @@ public class Inimigo01Controller : InimigoPai
             esperaTiro -= Time.deltaTime;
             if (esperaTiro < 0f)
             {
-                GameObject tiro = Instantiate(meuTiro, posicaoTiro.position, Quaternion.identity);
+                GameObject tiro = Instantiate(meuTiro, posicaoTiro.position, transform.rotation);
                 tiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velocidadeTiro);
                 esperaTiro = Random.Range(2f, 2.5f);
             }
