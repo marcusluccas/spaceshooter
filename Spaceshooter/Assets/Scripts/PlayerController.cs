@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject meuEscudo;
     private GameObject escudo;
     private float timerEscudo = 0f;
+    private int qtdEscudos = 3;
     void Start()
     {
         meuRB = GetComponent<Rigidbody2D>();
@@ -83,9 +84,10 @@ public class PlayerController : MonoBehaviour
 
     private void AtivaEscudo()
     {
-        if (Input.GetButtonDown("Shield") && escudo == null)
+        if (Input.GetButtonDown("Shield") && escudo == null && qtdEscudos > 0)
         {
             escudo = Instantiate(meuEscudo, transform.position, transform.rotation);
+            qtdEscudos--;
         }
         if (escudo != null)
         {
