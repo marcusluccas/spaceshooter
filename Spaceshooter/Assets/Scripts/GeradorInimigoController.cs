@@ -8,13 +8,16 @@ public class GeradorInimigoController : MonoBehaviour
     [SerializeField] private GameObject[] inimigos;
 
     private int pontos = 0;
-    private int level = 1;
+    private int level = 4;
 
     private float esperaInimigo = 0f;
     private float timerInimigo = 2f;
-    private int nextLevel = 100;
+    private int nextLevel = 1;
 
     private int qtdInimigo = 0;
+
+    [SerializeField] private GameObject bossAnimition;
+    private GameObject bossAnimitionCriado;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +27,14 @@ public class GeradorInimigoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GeraInimigos();
+        if (level >= 5)
+        {
+            GeraBoss();
+        }
+        else
+        {
+            GeraInimigos();
+        }
     }
 
     public void GanhaPontos(int pontos)
@@ -94,6 +104,21 @@ public class GeradorInimigoController : MonoBehaviour
                 qtdInimigo++;
                 esperaInimigo = timerInimigo;
             }
+        }
+    }
+
+    private void GeraBoss()
+    {
+        if (esperaInimigo > 0f && qtdInimigo <= 0 && bossAnimitionCriado == null)
+        {
+            esperaInimigo -= Time.deltaTime;
+        }
+
+        if (esperaInimigo <= 0f && qtdInimigo <= 0 && bossAnimitionCriado == null)
+        {
+            bossAnimitionCriado = Instantiate(bossAnimition, Vector3.zero, transform.rotation);
+            qtdInimigo++;
+            esperaInimigo = timerInimigo;
         }
     }
 }
