@@ -17,7 +17,7 @@ public class GeradorInimigoController : MonoBehaviour
     private int qtdInimigo = 0;
 
     [SerializeField] private GameObject bossAnimition;
-    private GameObject bossAnimitionCriado;
+    private bool bossExiste = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -109,14 +109,16 @@ public class GeradorInimigoController : MonoBehaviour
 
     private void GeraBoss()
     {
-        if (esperaInimigo > 0f && qtdInimigo <= 0 && bossAnimitionCriado == null)
+        if (esperaInimigo > 0f && qtdInimigo <= 0 && !bossExiste)
         {
             esperaInimigo -= Time.deltaTime;
         }
 
-        if (esperaInimigo <= 0f && qtdInimigo <= 0 && bossAnimitionCriado == null)
+        if (esperaInimigo <= 0f && qtdInimigo <= 0 && !bossExiste)
         {
-            bossAnimitionCriado = Instantiate(bossAnimition, Vector3.zero, transform.rotation);
+            GameObject bossCriando = Instantiate(bossAnimition, new Vector3(0f, -8f, 0f), Quaternion.Euler(Vector3.zero));
+            Destroy(bossCriando, 6.7f);
+            bossExiste = true;
             qtdInimigo++;
             esperaInimigo = timerInimigo;
         }

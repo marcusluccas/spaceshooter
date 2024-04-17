@@ -93,7 +93,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 209321267585232991}
-  - component: {fileID: 7405020508265374525}
+  - component: {fileID: 3894042709263324670}
+  - component: {fileID: 6687915481333460997}
   m_Layer: 0
   m_Name: Boss animition
   m_TagString: Untagged
@@ -117,7 +118,7 @@ Transform:
   - {fileID: 6101643287578136478}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &7405020508265374525
+--- !u!95 &3894042709263324670
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -127,7 +128,7 @@ Animator:
   m_GameObject: {fileID: 1360171897039550008}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3e348dc505834e749909637abf30bc23, type: 2}
+  m_Controller: {fileID: 9100000, guid: 21ed12c8f6cc9bc4f86a7aa595fbb866, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -138,3 +139,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6687915481333460997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360171897039550008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b86eab970ec9c143a7c2c160903f087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 1432625624152808295, guid: 781f3c40acb5f1b4a97b78be055d57da, type: 3}

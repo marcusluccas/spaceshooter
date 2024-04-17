@@ -47,3 +47,5 @@ MonoBehaviour:
   inimigos:
   - {fileID: 7030212861560117096, guid: 2232d45072932ff47882397bb4a993a4, type: 3}
   - {fileID: 5900416641690726159, guid: 85d5e109367997b45ac8b14b7f97690d, type: 3}
+  bossAnimition: {fileID: 1360171897039550008, guid: 5a21a17a0c94f4347887cfbba4e838f8, type: 3}
+  boss: {fileID: 1432625624152808295, guid: 781f3c40acb5f1b4a97b78be055d57da, type: 3}

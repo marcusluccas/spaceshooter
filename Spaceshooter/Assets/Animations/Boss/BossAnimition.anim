@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Boss
+  m_Name: BossAnimition
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -147,16 +147,10 @@ AnimationClip:
     - time: 6.1
       value: {fileID: -337507430, guid: a2e5387f621875641a414499ea9434a2, type: 3}
     - time: 6.3
-      value: {fileID: -2087153143, guid: a2e5387f621875641a414499ea9434a2, type: 3}
-    - time: 6.5
-      value: {fileID: -981387864, guid: a2e5387f621875641a414499ea9434a2, type: 3}
-    - time: 6.7
-      value: {fileID: 275049958, guid: 4b05f59d06baf724cacbd389743529eb, type: 3}
-    - time: 6.9
       value: {fileID: 1829178564, guid: 4b05f59d06baf724cacbd389743529eb, type: 3}
-    - time: 7.1
+    - time: 6.5
       value: {fileID: 1149154654, guid: 4b05f59d06baf724cacbd389743529eb, type: 3}
-    - time: 7.3
+    - time: 6.7
       value: {fileID: 275049958, guid: 4b05f59d06baf724cacbd389743529eb, type: 3}
     attribute: m_Sprite
     path: boss_surgindo
@@ -218,9 +212,6 @@ AnimationClip:
     - {fileID: -2087153143, guid: a2e5387f621875641a414499ea9434a2, type: 3}
     - {fileID: -981387864, guid: a2e5387f621875641a414499ea9434a2, type: 3}
     - {fileID: -337507430, guid: a2e5387f621875641a414499ea9434a2, type: 3}
-    - {fileID: -2087153143, guid: a2e5387f621875641a414499ea9434a2, type: 3}
-    - {fileID: -981387864, guid: a2e5387f621875641a414499ea9434a2, type: 3}
-    - {fileID: 275049958, guid: 4b05f59d06baf724cacbd389743529eb, type: 3}
     - {fileID: 1829178564, guid: 4b05f59d06baf724cacbd389743529eb, type: 3}
     - {fileID: 1149154654, guid: 4b05f59d06baf724cacbd389743529eb, type: 3}
     - {fileID: 275049958, guid: 4b05f59d06baf724cacbd389743529eb, type: 3}
@@ -229,7 +220,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 7.316667
+    m_StopTime: 6.7166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -536,4 +527,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 6.3
+    functionName: CriaBoss
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

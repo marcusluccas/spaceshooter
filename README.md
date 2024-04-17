@@ -15,6 +15,7 @@
 * Inimigo 2 anda para baixo no começo
 e quando chega no meio da tela anda para o lado oposto de onde ele esta
 e atira na direção do player
+* Level do Boss é o level 5
 ## Créditos
 * Ideia do curso de desenvolvimento de jogos da [Noneclass](https://noneclass.com.br)
 * Assets do [Dininho](https://www.youtube.com/@ErickDinobonoide)
