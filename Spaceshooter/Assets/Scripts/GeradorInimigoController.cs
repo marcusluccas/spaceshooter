@@ -10,11 +10,11 @@ public class GeradorInimigoController : MonoBehaviour
     [SerializeField] private GameObject bossAnimition;
 
     private int pontos = 0;
-    private int level = 4;
+    private int level = 1;
 
     private float esperaInimigo = 0f;
     private float timerInimigo = 2f;
-    private int nextLevel = 1;
+    private int nextLevel = 100;
 
     private int qtdInimigo = 0;
 
