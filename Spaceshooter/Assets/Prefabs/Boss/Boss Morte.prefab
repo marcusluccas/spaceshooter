@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3746470127385419733}
   - component: {fileID: 4986000062996105025}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: boss_combate_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4384734757674612796}
   - component: {fileID: 3776750167277690284}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boss Morte
   m_TagString: Untagged
   m_Icon: {fileID: 0}

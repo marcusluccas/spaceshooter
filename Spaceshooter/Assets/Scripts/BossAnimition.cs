@@ -20,5 +20,6 @@ public class BossAnimition : MonoBehaviour
     private void CriaBoss()
     {
         Instantiate(boss, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }

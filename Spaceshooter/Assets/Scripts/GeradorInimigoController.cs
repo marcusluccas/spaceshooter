@@ -118,7 +118,6 @@ public class GeradorInimigoController : MonoBehaviour
         if (esperaInimigo <= 0f && qtdInimigo <= 0 && !bossExiste)
         {
             GameObject bossCriando = Instantiate(bossAnimition, new Vector3(0f, -8f, 0f), Quaternion.Euler(Vector3.zero));
-            Destroy(bossCriando, 6.7f);
             bossExiste = true;
             qtdInimigo++;
             esperaInimigo = timerInimigo;

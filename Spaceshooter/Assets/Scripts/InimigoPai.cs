@@ -36,10 +36,16 @@ public class InimigoPai : MonoBehaviour
 
             if (vida <= 0)
             {
-                DropaItem();
+                if (powerUp != null)
+                {
+                    DropaItem();
+                }
                 Instantiate(minhaExplosao, transform.position, transform.rotation);
                 GeradorInimigoController gerador = FindObjectOfType<GeradorInimigoController>();
-                gerador.GanhaPontos(pontos);
+                if (gerador != null)
+                {
+                    gerador.GanhaPontos(pontos);
+                }
                 Destroy(gameObject);
             }
         }
