@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossController : InimigoPai
 {
-    private string estado = "estado3";
+    private string estado = "estado1";
     private Rigidbody2D meuRB;
     private bool direita = false;
     private float limiteX = 6f;
@@ -16,9 +16,12 @@ public class BossController : InimigoPai
     [SerializeField] private GameObject tiro2;
     private float delay;
     private float esperaTiro2;
+    private string[] estados = { "estado1", "estado2", "estado3" };
+    private float timerEstado;
     // Start is called before the first frame update
     void Start()
     {
+        timerEstado = 5f;
         velocidade = 2f;
         velocidadeTiro = 4f;
         delay = 1;
@@ -30,6 +33,8 @@ public class BossController : InimigoPai
     // Update is called once per frame
     void Update()
     {
+        AlteraEstado();
+
         switch (estado)
         {
             case "estado1":
@@ -116,6 +121,8 @@ public class BossController : InimigoPai
 
     private void Estado3()
     {
+        meuRB.velocity = Vector2.zero;
+
         esperaTiro -= Time.deltaTime;
 
         if (esperaTiro <= 0f)
@@ -129,6 +136,20 @@ public class BossController : InimigoPai
         {
             CriaTiro2();
             esperaTiro2 = delay * 1.5f;
+        }
+    }
+
+    private void AlteraEstado()
+    {
+        timerEstado -= Time.deltaTime;
+
+        if (timerEstado <= 0f)
+        {
+            int IndiceEstado = Random.Range(0, estados.Length);
+
+            estado = estados[IndiceEstado];
+            
+            timerEstado = 5f;
         }
     }
 }
