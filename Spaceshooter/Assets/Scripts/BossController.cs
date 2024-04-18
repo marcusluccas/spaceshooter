@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossController : InimigoPai
 {
-    private string estado = "estado1";
+    private string estado = "estado3";
     private Rigidbody2D meuRB;
     private bool direita = false;
     private float limiteX = 6f;
@@ -14,12 +14,16 @@ public class BossController : InimigoPai
     [SerializeField] private Transform PosicaoTiro3;
     [SerializeField] private GameObject tiro1;
     [SerializeField] private GameObject tiro2;
+    private float delay;
+    private float esperaTiro2;
     // Start is called before the first frame update
     void Start()
     {
         velocidade = 2f;
         velocidadeTiro = 4f;
-        esperaTiro = Random.Range(2f, 4f);
+        delay = 1;
+        esperaTiro = delay;
+        esperaTiro2 = delay;
         meuRB = GetComponent<Rigidbody2D>();
     }
 
@@ -35,6 +39,36 @@ public class BossController : InimigoPai
             case "estado2":
                 Estado2();
                 break;
+
+            case "estado3":
+                Estado3();
+                break;
+        }
+    }
+
+
+    private void CriaTiro1()
+    {
+        GameObject tiro;
+        tiro = Instantiate(tiro1, PosicaoTiro1.position, transform.rotation);
+        tiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -velocidadeTiro);
+
+        tiro = Instantiate(tiro1, PosicaoTiro2.position, transform.rotation);
+        tiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -velocidadeTiro);
+    }
+
+    private void CriaTiro2()
+    {
+        PlayerController player = FindObjectOfType<PlayerController>();
+
+        if (player)
+        {
+            GameObject tiro = Instantiate(tiro2, PosicaoTiro3.position, transform.rotation);
+            Vector3 direcao = player.transform.position - transform.position;
+            direcao.Normalize();
+            tiro.GetComponent<Rigidbody2D>().velocity = direcao * velocidadeTiro;
+            float angulo = Mathf.Atan2(direcao.y, direcao.x) * Mathf.Rad2Deg;
+            tiro.transform.rotation = Quaternion.Euler(0f, 0f, 90f + angulo);
         }
     }
 
@@ -58,52 +92,43 @@ public class BossController : InimigoPai
             direita = true;
         }
 
-        CriaTiro1();
+        esperaTiro -= Time.deltaTime;
+
+        if (esperaTiro <= 0f)
+        {
+            CriaTiro1();
+            esperaTiro = delay;
+        }
     }
 
     private void Estado2()
     {
         meuRB.velocity = Vector2.zero;
 
-        CriaTiro2();
+        esperaTiro2 -= Time.deltaTime;
+
+        if (esperaTiro2 <= 0f)
+        {
+            CriaTiro2();
+            esperaTiro2 = delay / 2;
+        }
     }
 
-    private void CriaTiro1()
+    private void Estado3()
     {
         esperaTiro -= Time.deltaTime;
 
         if (esperaTiro <= 0f)
         {
-            GameObject tiro;
-            tiro = Instantiate(tiro1, PosicaoTiro1.position, transform.rotation);
-            tiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -velocidadeTiro);
-
-            tiro = Instantiate(tiro1, PosicaoTiro2.position, transform.rotation);
-            tiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -velocidadeTiro);
-
-            esperaTiro = Random.Range(0.6f, 0.8f);
+            CriaTiro1();
+            esperaTiro = delay;
         }
-    }
+        esperaTiro2 -= Time.deltaTime;
 
-    private void CriaTiro2()
-    {
-        esperaTiro -= Time.deltaTime;
-
-        if (esperaTiro <= 0)
+        if (esperaTiro2 <= 0f)
         {
-            PlayerController player = FindObjectOfType<PlayerController>();
-
-            if (player)
-            {
-                GameObject tiro = Instantiate(tiro2, PosicaoTiro3.position, transform.rotation);
-                Vector3 direcao = player.transform.position - transform.position;
-                direcao.Normalize();
-                tiro.GetComponent<Rigidbody2D>().velocity = direcao * velocidadeTiro;
-                float angulo = Mathf.Atan2(direcao.y, direcao.x) * Mathf.Rad2Deg;
-                tiro.transform.rotation = Quaternion.Euler(0f, 0f, 90f + angulo);
-
-                esperaTiro = Random.Range(0.2f, 0.5f);
-            }
+            CriaTiro2();
+            esperaTiro2 = delay * 1.5f;
         }
     }
 }
