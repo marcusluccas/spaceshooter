@@ -6,6 +6,7 @@ public class InimigoPai : MonoBehaviour
 {
     protected float velocidade;
     protected int vida = 1;
+    [Header("Objetos dos Inimigos")]
     [SerializeField] protected GameObject minhaExplosao;
     [SerializeField] protected GameObject meuTiro;
     protected float esperaTiro;

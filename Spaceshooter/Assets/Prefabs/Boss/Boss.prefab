@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &425814298001862214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1220134564622078721}
+  m_Layer: 0
+  m_Name: Posicao Tiro 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1220134564622078721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425814298001862214}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6, y: -0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3769839862709057461}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1432625624152808295
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,6 +63,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 216562602088049949}
+  - {fileID: 8128594211739570473}
+  - {fileID: 1220134564622078721}
+  - {fileID: 406285938674352750}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3077593134977377204
@@ -46,6 +80,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72290314c147ad14fa1c25ffed099903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minhaExplosao: {fileID: 6162538279553947388, guid: 063c09c7c0ff7334992ef1010542e451, type: 3}
+  meuTiro: {fileID: 2498284385076816345, guid: 5df8a0b4d6cde0a4b869ad08b8c56a57, type: 3}
+  powerUp: {fileID: 2137412995410758447, guid: 172a7d39049eb8e47bc5e35cf2105c74, type: 3}
+  PosicaoTiro1: {fileID: 8128594211739570473}
+  PosicaoTiro2: {fileID: 1220134564622078721}
+  PosicaoTiro3: {fileID: 406285938674352750}
+  tiro1: {fileID: 2498284385076816345, guid: 5df8a0b4d6cde0a4b869ad08b8c56a57, type: 3}
+  tiro2: {fileID: 5425161006542645420, guid: a8186cdd8a2cda84aa206544b504a6f1, type: 3}
 --- !u!50 &2063816355650391971
 Rigidbody2D:
   serializedVersion: 4
@@ -73,6 +115,68 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!1 &1533708923675585034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 406285938674352750}
+  m_Layer: 0
+  m_Name: Posicao Tiro 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &406285938674352750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533708923675585034}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3769839862709057461}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1840239239544038080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8128594211739570473}
+  m_Layer: 0
+  m_Name: Posicao Tiro 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8128594211739570473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840239239544038080}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6, y: -0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3769839862709057461}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4046141511900154922
 GameObject:
   m_ObjectHideFlags: 0

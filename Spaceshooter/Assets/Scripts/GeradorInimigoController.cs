@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class GeradorInimigoController : MonoBehaviour
 {
+    [Header("Inimigo que vão ser gerados")]
     [SerializeField] private GameObject[] inimigos;
+    [SerializeField] private GameObject bossAnimition;
 
     private int pontos = 0;
     private int level = 4;
@@ -16,7 +18,6 @@ public class GeradorInimigoController : MonoBehaviour
 
     private int qtdInimigo = 0;
 
-    [SerializeField] private GameObject bossAnimition;
     private bool bossExiste = false;
     // Start is called before the first frame update
     void Start()

@@ -8,9 +8,11 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private float velocidade = 5f;
     private Rigidbody2D meuRB;
+    [Header("Coisas dos tiros")]
     [SerializeField] private GameObject meuTiro;
     [SerializeField] private GameObject meuSegundoTiro;
     [SerializeField] private Transform posicaoTiro;
+    [Header("Coisas do player")]
     [SerializeField] private GameObject minhaExplosao;
     private int vida = 3;
     private float velocidadeTiro = 10f;
