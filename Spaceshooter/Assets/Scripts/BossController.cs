@@ -21,12 +21,13 @@ public class BossController : InimigoPai
     // Start is called before the first frame update
     void Start()
     {
-        timerEstado = 5f;
+        timerEstado = 10f;
         velocidade = 2f;
         velocidadeTiro = 4f;
         delay = 1;
         esperaTiro = delay;
         esperaTiro2 = delay;
+        vida = 100;
         meuRB = GetComponent<Rigidbody2D>();
     }
 
@@ -149,7 +150,7 @@ public class BossController : InimigoPai
 
             estado = estados[IndiceEstado];
             
-            timerEstado = 5f;
+            timerEstado = 10f;
         }
     }
 }
