@@ -33,6 +33,7 @@ public class BossController : InimigoPai
         esperaTiro = delay;
         esperaTiro2 = delay;
         vida = vidaMax;
+        pontos = 100;
         meuRB = GetComponent<Rigidbody2D>();
     }
 
@@ -40,6 +41,7 @@ public class BossController : InimigoPai
     void Update()
     {
         barraVida.fillAmount = ((float) vida / (float) vidaMax);
+        barraVida.color = new Color32(150, (byte) (barraVida.fillAmount * 255), 50, 255);
 
         AlteraEstado();
 
