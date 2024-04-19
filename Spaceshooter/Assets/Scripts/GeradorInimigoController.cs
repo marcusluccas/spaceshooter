@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Principal;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GeradorInimigoController : MonoBehaviour
 {
     [Header("Inimigo que vão ser gerados")]
     [SerializeField] private GameObject[] inimigos;
     [SerializeField] private GameObject bossAnimition;
+    [SerializeField] private Text textoPontos;
 
     private int pontos = 0;
     private int level = 1;
@@ -22,7 +24,7 @@ public class GeradorInimigoController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        textoPontos.text = "PONTOS: " + pontos.ToString();
     }
 
     // Update is called once per frame
@@ -41,6 +43,7 @@ public class GeradorInimigoController : MonoBehaviour
     public void GanhaPontos(int pontos)
     {
         this.pontos += pontos;
+        textoPontos.text = "PONTOS: " + this.pontos.ToString();
 
         if (this.pontos > nextLevel * level)
         {

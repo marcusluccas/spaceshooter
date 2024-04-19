@@ -18,7 +18,7 @@ public class Inimigo02Controller : InimigoPai
         meuRB.velocity = new Vector2(0f, -velocidade);
         esperaTiro = Random.Range(1f, 2f);
         pontos = 25;
-        chance = 0.97f;
+        chance = 0.92f;
     }
 
     // Update is called once per frame
