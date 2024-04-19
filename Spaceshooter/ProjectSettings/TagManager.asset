@@ -56,3 +56,6 @@ TagManager:
   - name: Player
     uniqueID: 2627633101
     locked: 0
+  - name: IU
+    uniqueID: 3540062437
+    locked: 0
