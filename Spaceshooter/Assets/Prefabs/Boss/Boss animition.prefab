@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6101643287578136478}
   - component: {fileID: 1063546480588206528}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: boss_surgindo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 209321267585232991}
   - component: {fileID: 3894042709263324670}
   - component: {fileID: 6687915481333460997}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Boss animition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

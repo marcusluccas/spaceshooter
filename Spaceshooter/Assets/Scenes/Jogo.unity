@@ -128,6 +128,63 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 5502036678353449648, guid: e51f9ad08e79fb44ea5684fd4cc781f1, type: 3}
   m_PrefabInstance: {fileID: 4466467145862790317}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &262803722
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 209321267585232991, guid: 5a21a17a0c94f4347887cfbba4e838f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209321267585232991, guid: 5a21a17a0c94f4347887cfbba4e838f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 209321267585232991, guid: 5a21a17a0c94f4347887cfbba4e838f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209321267585232991, guid: 5a21a17a0c94f4347887cfbba4e838f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 209321267585232991, guid: 5a21a17a0c94f4347887cfbba4e838f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209321267585232991, guid: 5a21a17a0c94f4347887cfbba4e838f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209321267585232991, guid: 5a21a17a0c94f4347887cfbba4e838f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209321267585232991, guid: 5a21a17a0c94f4347887cfbba4e838f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209321267585232991, guid: 5a21a17a0c94f4347887cfbba4e838f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209321267585232991, guid: 5a21a17a0c94f4347887cfbba4e838f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360171897039550008, guid: 5a21a17a0c94f4347887cfbba4e838f8, type: 3}
+      propertyPath: m_Name
+      value: Boss animition
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5a21a17a0c94f4347887cfbba4e838f8, type: 3}
 --- !u!1001 &496680443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -688,6 +745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gerador Inimigo
       objectReference: {fileID: 0}
+    - target: {fileID: 5517748351087730049, guid: 9e220d1da5ef560479c688a3ce2010fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6250889827027928053, guid: 9e220d1da5ef560479c688a3ce2010fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -812,3 +873,4 @@ SceneRoots:
   - {fileID: 1958165469402574949}
   - {fileID: 5746902914579737673}
   - {fileID: 1572406590}
+  - {fileID: 262803722}

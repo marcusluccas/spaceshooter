@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1220134564622078721}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Posicao Tiro 2
   m_TagString: Untagged
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3085634916475686897}
   - component: {fileID: 6225864519758843279}
   - component: {fileID: 6197074383100039079}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Barra de Vida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3077593134977377204}
   - component: {fileID: 2063816355650391971}
   - component: {fileID: 357860650031883372}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Boss
   m_TagString: Inimigos
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 406285938674352750}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Posicao Tiro 3
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -278,7 +278,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8128594211739570473}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Posicao Tiro 1
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 216562602088049949}
   - component: {fileID: 539623348946376778}
   - component: {fileID: 4108560022454201460}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: boss_combate_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 775886985263813045}
   - component: {fileID: 7326391509982432709}
   - component: {fileID: 4869039018139094734}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Canvas Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
