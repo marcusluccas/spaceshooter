@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,9 +26,14 @@ public class PlayerController : MonoBehaviour
     private GameObject escudo;
     private float timerEscudo = 0f;
     private int qtdEscudos = 3;
+    [SerializeField] private Text textoVida;
+    [SerializeField] private Text textoEscudo;
+
     void Start()
     {
         meuRB = GetComponent<Rigidbody2D>();
+        textoVida.text = vida.ToString();
+        textoEscudo.text = qtdEscudos.ToString();
     }
 
     // Update is called once per frame
@@ -90,6 +96,7 @@ public class PlayerController : MonoBehaviour
         {
             escudo = Instantiate(meuEscudo, transform.position, transform.rotation);
             qtdEscudos--;
+            textoEscudo.text = qtdEscudos.ToString();
         }
         if (escudo != null)
         {
@@ -109,8 +116,10 @@ public class PlayerController : MonoBehaviour
     public void LevaDano(int dano = 1)
     {
         vida -= dano;
-        
-        if (vida < 0) 
+
+        textoVida.text = vida.ToString();
+
+        if (vida <= 0) 
         {
             Instantiate(minhaExplosao, transform.position, transform.rotation);
             Destroy(gameObject);
