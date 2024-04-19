@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class BossController : InimigoPai
 {
@@ -18,6 +21,8 @@ public class BossController : InimigoPai
     private float esperaTiro2;
     private string[] estados = { "estado1", "estado2", "estado3" };
     private float timerEstado;
+    [SerializeField] private Image barraVida;
+    private int vidaMax = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +32,15 @@ public class BossController : InimigoPai
         delay = 1;
         esperaTiro = delay;
         esperaTiro2 = delay;
-        vida = 100;
+        vida = vidaMax;
         meuRB = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        barraVida.fillAmount = ((float) vida / (float) vidaMax);
+
         AlteraEstado();
 
         switch (estado)
