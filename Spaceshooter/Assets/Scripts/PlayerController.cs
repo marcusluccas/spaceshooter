@@ -122,6 +122,12 @@ public class PlayerController : MonoBehaviour
         if (vida <= 0) 
         {
             Instantiate(minhaExplosao, transform.position, transform.rotation);
+            GameManager gameManager = FindObjectOfType<GameManager>();
+            if (gameManager != null)
+            {
+                gameManager.VoltaMenu();
+            }
+
             Destroy(gameObject);
         }
     }

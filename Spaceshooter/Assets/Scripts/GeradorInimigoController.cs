@@ -30,7 +30,7 @@ public class GeradorInimigoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (level >= 5)
+        if (level >= 8)
         {
             GeraBoss();
         }

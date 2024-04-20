@@ -180,17 +180,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c0ca3a803ef089448e7c6e6a40cff80, type: 3}
---- !u!114 &1944583683 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5958338230280214711, guid: aed35a757379c114fae5004243efebfa, type: 3}
-  m_PrefabInstance: {fileID: 7569153617445277202}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d744fe49b43903c479d3009429926bc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2083761055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -402,18 +391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas Inicio
       objectReference: {fileID: 0}
-    - target: {fileID: 6793143477483490195, guid: 6de8c70bb144f7644a71ef94efcbb12a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1944583683}
     - target: {fileID: 7978647819493664520, guid: 6de8c70bb144f7644a71ef94efcbb12a, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2083761056}
-    - target: {fileID: 8365295615568797762, guid: 6de8c70bb144f7644a71ef94efcbb12a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1944583683}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
