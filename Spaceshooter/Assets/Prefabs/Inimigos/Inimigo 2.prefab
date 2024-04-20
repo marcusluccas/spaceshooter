@@ -114,6 +114,7 @@ MonoBehaviour:
   meuTiro: {fileID: 5425161006542645420, guid: a8186cdd8a2cda84aa206544b504a6f1, type: 3}
   powerUp: {fileID: 2137412995410758447, guid: 172a7d39049eb8e47bc5e35cf2105c74, type: 3}
   soundExplosao: {fileID: 8300000, guid: bad6a2f05ebb9eb4fa3491e1215850d8, type: 3}
+  soundTiro: {fileID: 8300000, guid: 2ff6d5d963c112547b1037d69391203c, type: 3}
   posicaoTiro: {fileID: 194692331362159101}
 --- !u!1 &8059504516626548775
 GameObject:
