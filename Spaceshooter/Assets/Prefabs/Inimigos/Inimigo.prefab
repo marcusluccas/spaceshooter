@@ -109,6 +109,7 @@ MonoBehaviour:
   minhaExplosao: {fileID: 6162538279553947388, guid: 063c09c7c0ff7334992ef1010542e451, type: 3}
   meuTiro: {fileID: 2498284385076816345, guid: 5df8a0b4d6cde0a4b869ad08b8c56a57, type: 3}
   powerUp: {fileID: 2137412995410758447, guid: 172a7d39049eb8e47bc5e35cf2105c74, type: 3}
+  soundExplosao: {fileID: 8300000, guid: bad6a2f05ebb9eb4fa3491e1215850d8, type: 3}
   posicaoTiro: {fileID: 4987024287654298713}
 --- !u!70 &4602509066227315565
 CapsuleCollider2D:

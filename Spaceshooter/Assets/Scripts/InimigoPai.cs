@@ -14,11 +14,12 @@ public class InimigoPai : MonoBehaviour
     protected int pontos = 10;
     [SerializeField] protected GameObject powerUp;
     protected float chance;
+    [SerializeField] private AudioClip soundExplosao;
+    private Camera camera;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -41,6 +42,8 @@ public class InimigoPai : MonoBehaviour
                     DropaItem();
                 }
                 Instantiate(minhaExplosao, transform.position, transform.rotation);
+                camera = FindObjectOfType<Camera>();
+                AudioSource.PlayClipAtPoint(soundExplosao, camera.transform.position);
                 GeradorInimigoController gerador = FindObjectOfType<GeradorInimigoController>();
                 if (gerador != null)
                 {
@@ -56,7 +59,12 @@ public class InimigoPai : MonoBehaviour
     {
         if (collision.CompareTag("Destruidor de Tiro"))
         {
-            Instantiate(minhaExplosao, transform.position, transform.rotation);
+            if (GetComponentInChildren<SpriteRenderer>().isVisible)
+            {
+                Instantiate(minhaExplosao, transform.position, transform.rotation);
+                camera = FindObjectOfType<Camera>();
+                AudioSource.PlayClipAtPoint(soundExplosao, camera.transform.position);
+            }
             Destroy(gameObject);
         }
     }
@@ -67,6 +75,8 @@ public class InimigoPai : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerController>().LevaDano();
             Instantiate(minhaExplosao, transform.position, transform.rotation);
+            camera = FindObjectOfType<Camera>();
+            AudioSource.PlayClipAtPoint(soundExplosao, camera.transform.position);
             Destroy(gameObject);
         }
     }
