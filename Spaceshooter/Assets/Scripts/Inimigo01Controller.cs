@@ -10,13 +10,13 @@ public class Inimigo01Controller : InimigoPai
     // Start is called before the first frame update
     void Start()
     {
-        vida = 2;
+        vida = 1;
         velocidade = 1.5f;
         meuRB = GetComponent<Rigidbody2D>();
         meuRB.velocity = new Vector2(0f, -velocidade);
         esperaTiro = Random.Range(0.5f, 1f);
         velocidadeTiro = -4f;
-        chance = 0.96f;
+        chance = 0.99f;
     }
 
     // Update is called once per frame

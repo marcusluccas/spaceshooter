@@ -30,7 +30,9 @@ public class GeradorInimigoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (level >= 8)
+        textoPontos.text = "PONTOS: " + this.pontos.ToString();
+
+        if (level >= 6)
         {
             GeraBoss();
         }
@@ -42,12 +44,12 @@ public class GeradorInimigoController : MonoBehaviour
 
     public void GanhaPontos(int pontos)
     {
-        this.pontos += pontos;
-        textoPontos.text = "PONTOS: " + this.pontos.ToString();
+        this.pontos += pontos * level;
 
-        if (this.pontos > nextLevel * level)
+        if (this.pontos > nextLevel)
         {
             level++;
+            nextLevel *= 2;
         }
     }
 

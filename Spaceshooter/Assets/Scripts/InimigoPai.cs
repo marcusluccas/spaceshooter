@@ -79,7 +79,7 @@ public class InimigoPai : MonoBehaviour
             GameObject powerUpCriado = Instantiate(powerUp, transform.position, transform.rotation);
             Vector2 direcao = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
             powerUpCriado.GetComponent<Rigidbody2D>().velocity = direcao;
-            Destroy(powerUpCriado, 3f);
+            Destroy(powerUpCriado, 5f);
         }
     }
 

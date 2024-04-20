@@ -21,7 +21,7 @@ public class BossController : InimigoPai
     private string[] estados = { "estado1", "estado2", "estado3" };
     private float timerEstado;
     [SerializeField] private Image barraVida;
-    private int vidaMax = 100;
+    private int vidaMax = 400;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +42,7 @@ public class BossController : InimigoPai
         barraVida.fillAmount = ((float) vida / (float) vidaMax);
         barraVida.color = new Color32(150, (byte) (barraVida.fillAmount * 255), 50, 255);
 
+        AumentaDificudade();
         AlteraEstado();
 
         switch (estado)
@@ -60,6 +61,13 @@ public class BossController : InimigoPai
         }
     }
 
+    private void AumentaDificudade()
+    {
+        if (vida <= vidaMax / 2)
+        {
+            delay = 0.7f;
+        }
+    }
 
     private void CriaTiro1()
     {
