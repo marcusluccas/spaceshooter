@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private int qtdEscudos = 3;
     [SerializeField] private Text textoVida;
     [SerializeField] private Text textoEscudo;
+    [SerializeField] private AudioClip soundTiro;
+    private Camera camera;
 
     void Start()
     {
@@ -58,9 +60,11 @@ public class PlayerController : MonoBehaviour
 
     private void Atirando()
     {
+        camera = FindObjectOfType<Camera>();
+
         if (Input.GetButtonDown("Fire1"))
         {
-            switch(levelTiro)
+            switch (levelTiro)
             {
                 case 1:
                     CriaTiro(meuTiro, posicaoTiro.position);
@@ -81,6 +85,8 @@ public class PlayerController : MonoBehaviour
                     CriaTiro(meuSegundoTiro, posicaoTiroRight);
                     break;
             }
+
+            AudioSource.PlayClipAtPoint(soundTiro, camera.transform.position);
         }
     }
 

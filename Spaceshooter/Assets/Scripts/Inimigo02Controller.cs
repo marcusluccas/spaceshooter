@@ -54,6 +54,8 @@ public class Inimigo02Controller : InimigoPai
                 tiro.GetComponent<Rigidbody2D>().velocity = direcao * velocidadeTiro;
                 float angulo = Mathf.Atan2(direcao.y, direcao.x) * Mathf.Rad2Deg;
                 tiro.transform.rotation = Quaternion.Euler(0f, 0f, 90f + angulo);
+                camera = FindObjectOfType<Camera>();
+                AudioSource.PlayClipAtPoint(soundTiro, camera.transform.position);
                 esperaTiro = Random.Range(2.5f, 3f);
             }
         }

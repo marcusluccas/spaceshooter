@@ -14,8 +14,9 @@ public class InimigoPai : MonoBehaviour
     protected int pontos = 10;
     [SerializeField] protected GameObject powerUp;
     protected float chance;
-    [SerializeField] private AudioClip soundExplosao;
-    private Camera camera;
+    [SerializeField] protected AudioClip soundExplosao;
+    protected Camera camera;
+    [SerializeField] protected AudioClip soundTiro;
 
     // Start is called before the first frame update
     void Start()

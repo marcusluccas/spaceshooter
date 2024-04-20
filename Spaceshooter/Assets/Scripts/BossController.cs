@@ -77,6 +77,9 @@ public class BossController : InimigoPai
 
         tiro = Instantiate(tiro1, PosicaoTiro2.position, transform.rotation);
         tiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -velocidadeTiro);
+
+        camera = FindObjectOfType<Camera>();
+        AudioSource.PlayClipAtPoint(soundTiro, camera.transform.position);
     }
 
     private void CriaTiro2()
@@ -91,6 +94,8 @@ public class BossController : InimigoPai
             tiro.GetComponent<Rigidbody2D>().velocity = direcao * velocidadeTiro;
             float angulo = Mathf.Atan2(direcao.y, direcao.x) * Mathf.Rad2Deg;
             tiro.transform.rotation = Quaternion.Euler(0f, 0f, 90f + angulo);
+            camera = FindObjectOfType<Camera>();
+            AudioSource.PlayClipAtPoint(soundTiro, camera.transform.position);
         }
     }
 

@@ -36,6 +36,8 @@ public class Inimigo01Controller : InimigoPai
             {
                 GameObject tiro = Instantiate(meuTiro, posicaoTiro.position, transform.rotation);
                 tiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velocidadeTiro);
+                camera = FindObjectOfType<Camera>();
+                AudioSource.PlayClipAtPoint(soundTiro, camera.transform.position);
                 esperaTiro = Random.Range(2f, 2.5f);
             }
         }
