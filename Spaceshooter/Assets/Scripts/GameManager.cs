@@ -30,6 +30,13 @@ public class GameManager : MonoBehaviour
         
     }
 
+    IEnumerator DelayMorte()
+    {
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(0);
+    }
+
     public void CarregarJogo()
     {
         SceneManager.LoadScene(1);
@@ -37,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     public void VoltaMenu()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(DelayMorte());
     }
 
     public void Sair()
