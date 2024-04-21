@@ -10,9 +10,11 @@ public class GeradorInimigoController : MonoBehaviour
     [SerializeField] private GameObject[] inimigos;
     [SerializeField] private GameObject bossAnimition;
     [SerializeField] private Text textoPontos;
+    [SerializeField] private AudioClip musicBoss;
+    private AudioSource musicControl;
 
     private int pontos = 0;
-    private int level = 1;
+    private int level = 5;
 
     private float esperaInimigo = 0f;
     private float timerInimigo = 2f;
@@ -24,6 +26,8 @@ public class GeradorInimigoController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        musicControl = GetComponent<AudioSource>();
+        musicControl.transform.position = new Vector3(0f, 0f, -10f);
         textoPontos.text = "PONTOS: " + pontos.ToString();
     }
 
@@ -123,6 +127,8 @@ public class GeradorInimigoController : MonoBehaviour
         if (esperaInimigo <= 0f && qtdInimigo <= 0 && !bossExiste)
         {
             GameObject bossCriando = Instantiate(bossAnimition, new Vector3(0f, -8f, 0f), Quaternion.Euler(Vector3.zero));
+            musicControl.clip = musicBoss;
+            musicControl.Play();
             bossExiste = true;
             qtdInimigo++;
             esperaInimigo = timerInimigo;
