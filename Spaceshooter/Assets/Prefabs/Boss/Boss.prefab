@@ -160,6 +160,8 @@ MonoBehaviour:
   minhaExplosao: {fileID: 4597434312077086451, guid: 04622ba54b32ac74cba23021331b3ce0, type: 3}
   meuTiro: {fileID: 0}
   powerUp: {fileID: 0}
+  soundExplosao: {fileID: 8300000, guid: bad6a2f05ebb9eb4fa3491e1215850d8, type: 3}
+  soundTiro: {fileID: 8300000, guid: 2ff6d5d963c112547b1037d69391203c, type: 3}
   PosicaoTiro1: {fileID: 8128594211739570473}
   PosicaoTiro2: {fileID: 1220134564622078721}
   PosicaoTiro3: {fileID: 406285938674352750}

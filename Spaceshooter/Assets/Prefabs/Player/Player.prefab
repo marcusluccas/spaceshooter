@@ -190,6 +190,12 @@ MonoBehaviour:
   posicaoTiro: {fileID: 7458000620541016185}
   minhaExplosao: {fileID: 6162538279553947388, guid: 063c09c7c0ff7334992ef1010542e451, type: 3}
   meuEscudo: {fileID: 4007385016849330273, guid: bb0da9e0bbf832e40849e4f9ed9cbc4a, type: 3}
+  textoVida: {fileID: 0}
+  textoEscudo: {fileID: 0}
+  soundTiro: {fileID: 8300000, guid: 47a906e1c2436f24abfe399954f52d83, type: 3}
+  soundMorte: {fileID: 8300000, guid: 885faef7316bdb54483a16ce2010aae1, type: 3}
+  soundStartShield: {fileID: 8300000, guid: f8ac9f21b03ac19478e29a89ee26aadd, type: 3}
+  soundQuitShield: {fileID: 8300000, guid: 84c1c10c92b8b744883e8318f1806006, type: 3}
 --- !u!50 &151233036685939826
 Rigidbody2D:
   serializedVersion: 4

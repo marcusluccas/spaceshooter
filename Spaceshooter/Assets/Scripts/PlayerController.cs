@@ -30,6 +30,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Text textoEscudo;
     [SerializeField] private AudioClip soundTiro;
     private Camera camera;
+    [SerializeField] private AudioClip soundMorte;
+    [SerializeField] private AudioClip soundStartShield;
+    [SerializeField] private AudioClip soundQuitShield;
 
     void Start()
     {
@@ -101,6 +104,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Shield") && escudo == null && qtdEscudos > 0)
         {
             escudo = Instantiate(meuEscudo, transform.position, transform.rotation);
+            camera = FindObjectOfType<Camera>();
+            AudioSource.PlayClipAtPoint(soundStartShield, camera.transform.position);
             qtdEscudos--;
             textoEscudo.text = qtdEscudos.ToString();
         }
@@ -113,6 +118,8 @@ public class PlayerController : MonoBehaviour
             if (timerEscudo > 5.2f)
             {
                 Destroy(escudo);
+                camera = FindObjectOfType<Camera>();
+                AudioSource.PlayClipAtPoint(soundQuitShield, camera.transform.position);
                 timerEscudo = 0f;
             }
         }
@@ -128,6 +135,8 @@ public class PlayerController : MonoBehaviour
         if (vida <= 0) 
         {
             Instantiate(minhaExplosao, transform.position, transform.rotation);
+            camera = FindObjectOfType<Camera>();
+            AudioSource.PlayClipAtPoint(soundMorte, camera.transform.position);
             GameManager gameManager = FindObjectOfType<GameManager>();
             if (gameManager != null)
             {
