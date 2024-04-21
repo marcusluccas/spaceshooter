@@ -34,6 +34,7 @@ public class BossController : InimigoPai
         vida = vidaMax;
         pontos = 100;
         meuRB = GetComponent<Rigidbody2D>();
+        GetComponentInChildren<Canvas>().worldCamera = Camera.main;
     }
 
     // Update is called once per frame

@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: 5900416641690726159, guid: 85d5e109367997b45ac8b14b7f97690d, type: 3}
   bossAnimition: {fileID: 1360171897039550008, guid: 5a21a17a0c94f4347887cfbba4e838f8, type: 3}
   textoPontos: {fileID: 0}
-  musicBoss: {fileID: 8300000, guid: 9aee6cfd4aa2954418c64cf80494153b, type: 3}
+  musicBoss: {fileID: 8300000, guid: 125362ee848ce7a41a3caa5a7ee02e82, type: 3}
 --- !u!82 &1160745450318903583
 AudioSource:
   m_ObjectHideFlags: 0
@@ -61,9 +61,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 125362ee848ce7a41a3caa5a7ee02e82, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9aee6cfd4aa2954418c64cf80494153b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0

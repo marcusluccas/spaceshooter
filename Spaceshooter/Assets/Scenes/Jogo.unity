@@ -670,21 +670,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 974121160054696684, guid: 9e220d1da5ef560479c688a3ce2010fa, type: 3}
-      propertyPath: musicBoss
-      value: 
-      objectReference: {fileID: 8300000, guid: 125362ee848ce7a41a3caa5a7ee02e82, type: 3}
-    - target: {fileID: 974121160054696684, guid: 9e220d1da5ef560479c688a3ce2010fa, type: 3}
       propertyPath: textoPontos
       value: 
       objectReference: {fileID: 581419848}
-    - target: {fileID: 1160745450318903583, guid: 9e220d1da5ef560479c688a3ce2010fa, type: 3}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1160745450318903583, guid: 9e220d1da5ef560479c688a3ce2010fa, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 9aee6cfd4aa2954418c64cf80494153b, type: 3}
     - target: {fileID: 5517748351087730049, guid: 9e220d1da5ef560479c688a3ce2010fa, type: 3}
       propertyPath: m_Name
       value: Gerador Inimigo

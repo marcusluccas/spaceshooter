@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform posicaoTiro;
     [Header("Coisas do player")]
     [SerializeField] private GameObject minhaExplosao;
-    private int vida = 3;
+    private int vida = 5;
     private float velocidadeTiro = 10f;
     private float limiteX = 8.25f;
     private float limiteY = 4.3f;
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject meuEscudo;
     private GameObject escudo;
     private float timerEscudo = 0f;
-    private int qtdEscudos = 3;
+    private int qtdEscudos = 5;
     [SerializeField] private Text textoVida;
     [SerializeField] private Text textoEscudo;
     [SerializeField] private AudioClip soundTiro;

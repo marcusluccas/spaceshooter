@@ -14,7 +14,7 @@ public class GeradorInimigoController : MonoBehaviour
     private AudioSource musicControl;
 
     private int pontos = 0;
-    private int level = 5;
+    private int level = 1;
 
     private float esperaInimigo = 0f;
     private float timerInimigo = 2f;
@@ -36,7 +36,7 @@ public class GeradorInimigoController : MonoBehaviour
     {
         textoPontos.text = "PONTOS: " + this.pontos.ToString();
 
-        if (level >= 6)
+        if (level >= 8)
         {
             GeraBoss();
         }

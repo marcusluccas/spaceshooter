@@ -22,4 +22,13 @@ public class BossAnimition : MonoBehaviour
         Instantiate(boss, transform.position, transform.rotation);
         Destroy(gameObject);
     }
+
+    private void Recomeca()
+    {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        if (gameManager != null)
+        {
+            gameManager.VoltaMenu();
+        }
+    }
 }
